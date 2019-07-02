@@ -7,15 +7,26 @@
           <hr />
           <div class="form-group">
             <label for="email">Mail</label>
-            <input type="text" id="email" class="form-control" v-model="userData.email"/>
+            <input
+              type="text"
+              id="email"
+              class="form-control"
+              :value="userData.email"
+              @input="userData.email = $event.target.value"
+            />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" v-model.lazy="userData.password"/>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              v-model.lazy="userData.password"
+            />
           </div>
           <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" class="form-control" v-model="userData.age"/>
+            <input type="number" id="age" class="form-control" v-model="userData.age" />
           </div>
         </div>
       </div>
@@ -31,10 +42,10 @@
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div class="form-group">
             <label for="sendmail">
-              <input type="checkbox" id="sendmail" value="SendMail" v-model="sendMail"/> Send Mail
+              <input type="checkbox" id="sendmail" value="SendMail" v-model="sendMail" /> Send Mail
             </label>
             <label for="sendInfomail">
-              <input type="checkbox" id="sendInfomail" value="SendInfoMail" v-model="sendMail"/> Send Infomail
+              <input type="checkbox" id="sendInfomail" value="SendInfoMail" v-model="sendMail" /> Send Infomail
             </label>
           </div>
         </div>
@@ -42,10 +53,10 @@
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
           <label for="male">
-            <input type="radio" id="male" value="Male" v-model="gender"/> Male
+            <input type="radio" id="male" value="Male" v-model="gender" /> Male
           </label>
           <label for="female">
-            <input type="radio" id="female" value="Female" v-model="gender"/> Female
+            <input type="radio" id="female" value="Female" v-model="gender" /> Female
           </label>
         </div>
       </div>
@@ -96,17 +107,17 @@
 export default {
   data() {
     return {
-			userData : {
-				email: "",
-				password: "",
-				age: 27
-			},
-			message: "A New text",
-			sendMail: [],
-			gender: "Male",
-			selectedPriority: "High",
-			priorities: ["High", "Medium", "Low"],
-		}
+      userData: {
+        email: "",
+        password: "",
+        age: 27
+      },
+      message: "A New text",
+      sendMail: [],
+      gender: "Male",
+      selectedPriority: "High",
+      priorities: ["High", "Medium", "Low"]
+    };
   }
 };
 </script>
